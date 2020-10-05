@@ -4,6 +4,7 @@ $(document).ready(onReady);
 function onReady(){
   console.log('JQ');
   appendPeople();
+  promptPlayer();
 }//end onReady
 
 function appendPeople(){
@@ -12,12 +13,18 @@ function appendPeople(){
   for(let person of people){
   //append a div for each person in the array
     $('body').append(`
-      <div>
+      <div data-userName="${person.githubUsername}">
         <img src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
       </div>
-    `)
-  }
-
-  //div should contain an image from each gitHub profile
-  
+    `)//div should contain an image from each gitHub profile
+  }  
 }//end appendPeople
+
+function promptPlayer(){
+  console.log('Play!');
+  //randomly select a name from the people array
+  let randomName = people[Math.floor(Math.random()*people.length)].name;
+  console.log(randomName);
+  //display a randomly selected name on the DOM
+  $('#dispName').text(`${randomName}`)
+}//end promptPlayer
