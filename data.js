@@ -27,4 +27,21 @@ var people = [
     name: 'Chris',
     githubUsername: 'christopher-black'
   },
+  {
+    name: 'Nick',
+    githubUsername: 'lawlernp'
+  },
+  {
+    name: 'Kelly',
+    githubUsername: 'KellyDanger'
+  },
+  {
+    name: 'Shyla',
+    githubUsername: 'ShylaEarl'
+  },
+  {
+    name: 'Zack',
+    githubUsername: 'unknown'
+  }
+
 ];
