@@ -36,7 +36,8 @@ function promptPlayer(){
 function clickOnPic(){
   let clickedPicName = $(this).data('picname');
   console.log(`you clicked ${clickedPicName}'s pic`);
-  
-  
+  if(clickedPicName === $('#dispName').text())
+    console.log('match!');
+    
 }
 //give them a success message
