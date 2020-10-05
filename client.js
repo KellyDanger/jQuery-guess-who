@@ -3,6 +3,9 @@ $(document).ready(onReady);
 
 function onReady(){
   console.log('JQ');
+  //EVENT LISTENERS
+  $('#photoContainer').on('click', '.pic', clickOnPic)
+  //FUNCTIONS
   appendPeople();
   promptPlayer();
 }//end onReady
@@ -12,9 +15,9 @@ function appendPeople(){
   //loop through the people array 
   for(let person of people){
   //append a div for each person in the array
-    $('body').append(`
-      <div data-userName="${person.githubUsername}">
-        <img src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
+    $('#photoContainer').append(`
+      <div>
+        <img class="pic" data-picName="${person.name}" src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
       </div>
     `)//div should contain an image from each gitHub profile
   }  
@@ -28,3 +31,10 @@ function promptPlayer(){
   //display a randomly selected name on the DOM
   $('#dispName').text(`${randomName}`)
 }//end promptPlayer
+
+//if the player clicks on the correct player
+function clickOnPic(){
+  console.log('you clicked on a pic');
+  
+}
+//give them a success message
