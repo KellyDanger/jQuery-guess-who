@@ -34,7 +34,9 @@ function promptPlayer(){
 
 //if the player clicks on the correct player
 function clickOnPic(){
-  console.log('you clicked on a pic');
+  let clickedPicName = $(this).data('picname');
+  console.log(`you clicked ${clickedPicName}'s pic`);
+  
   
 }
 //give them a success message
