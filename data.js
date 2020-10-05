@@ -41,7 +41,7 @@ var people = [
   },
   {
     name: 'Zack',
-    githubUsername: 'unknown'
+    githubUsername: 'inBetweenDreams08'
   }
 
 ];

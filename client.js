@@ -13,7 +13,7 @@ function appendPeople(){
   //append a div for each person in the array
     $('body').append(`
       <div>
-        This is a new div
+        <img src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
       </div>
     `)
   }
