@@ -1,3 +1,7 @@
 .greenPic {
   background-color: green;
 }
+.photoContainer {
+  display: inline-block;
+  padding: 20px;
+}

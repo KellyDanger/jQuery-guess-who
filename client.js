@@ -16,7 +16,7 @@ function appendPeople(){
   for(let person of people){
   //append a div for each person in the array
     $('#photoContainer').append(`
-      <div>
+      <div class="photoContainer">
         <img class="pic" data-picName="${person.name}"  src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
       </div>
     `)//div should contain an image from each gitHub profile
@@ -44,9 +44,9 @@ function clickOnPic(){
     $(this).parent().addClass('greenPic')
     setTimeout(function(){
       $('div').removeClass('greenPic')
+      promptPlayer();
     }, 2000);
     //add visual cue that they got it right with a delay
-    promptPlayer();
   }//end if
 }//end clickOnPic 
 
