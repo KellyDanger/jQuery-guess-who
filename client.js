@@ -35,11 +35,12 @@ function promptPlayer(){
 //if the player clicks on the correct player
 function clickOnPic(){
   let clickedPicName = $(this).data('picname');
-  if(clickedPicName === $('#dispName').text()){
+  //give them a success message
+  if (clickedPicName !== $('#dispName').text()){
+    alert(`Sorry! That's not ${$('#dispName').text()} try again`)
+  } else {
     alert(`Correct! That IS ${clickedPicName}'s pic!`)
+    //add visual cue that they got it right with a delay
+    promptPlayer();
   }//end if
-  else {
-    alert(`Sorry! That's not ${$('#dispName').text()}`)
-  }
 }//end clickOnPic 
-//give them a success message
