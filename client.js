@@ -6,7 +6,8 @@ function onReady(){
   //EVENT LISTENERS
   $('#photoContainer').on('click', '.pic', clickOnPic)
   //FUNCTIONS
-  appendPeople();
+  //appendPeople();//using shuffle instead
+  shuffle(people);
   promptPlayer();
 }//end onReady
 
@@ -41,16 +42,29 @@ function clickOnPic(){
   } 
   else {
     //alert(`Correct! That IS ${clickedPicName}'s pic!`);
+    //add visual cue that they got it right with a delay
     $(this).parent().addClass('greenPic')
     setTimeout(function(){
       $('div').removeClass('greenPic')
       promptPlayer();
-    }, 2000);
-    //add visual cue that they got it right with a delay
+    }, 2000);   
   }//end if
 }//end clickOnPic 
 
-// function returnClass(){
-//   $(this).parent().removeClass('greenPic')
-//   //$('.pic').parent().addClass('greenPic')
-// }
+
+function shuffle(array){
+  for(let i = array.length - 1; i >= 0; i--){
+    let randomIndex = Math.floor(Math.random() * (i +1));
+    let itemAtIndex = array[randomIndex];
+    array[randomIndex] = array[i];
+    array[i] = itemAtIndex;
+  }
+  for(let person of array){
+    //append a div for each person in the array
+      $('#photoContainer').append(`
+        <div class="photoContainer">
+          <img class="pic" data-picName="${person.name}"  src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
+        </div>
+      `)//div should contain an image from each gitHub profile
+    }  
+}
