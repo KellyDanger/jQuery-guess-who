@@ -17,7 +17,7 @@ function appendPeople(){
   //append a div for each person in the array
     $('#photoContainer').append(`
       <div>
-        <img class="pic" data-picName="${person.name}" src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
+        <img class="pic" data-picName="${person.name}"  src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of${person.name}">
       </div>
     `)//div should contain an image from each gitHub profile
   }  
@@ -35,12 +35,19 @@ function promptPlayer(){
 //if the player clicks on the correct player
 function clickOnPic(){
   let clickedPicName = $(this).data('picname');
-  //give them a success message
+  //give them a failure message and let them try again
   if (clickedPicName !== $('#dispName').text()){
     alert(`Sorry! That's not ${$('#dispName').text()} try again`)
-  } else {
-    alert(`Correct! That IS ${clickedPicName}'s pic!`)
+  } 
+  else {
+    alert(`Correct! That IS ${clickedPicName}'s pic!`);
+    //$(this).parent().addClass('greenPic')
     //add visual cue that they got it right with a delay
     promptPlayer();
   }//end if
 }//end clickOnPic 
+
+// function returnClass(){
+//   //$(this).parent().removeClass()
+//   $('.pic').parent().addClass('greenPic')
+// }
