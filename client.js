@@ -40,14 +40,17 @@ function clickOnPic(){
     alert(`Sorry! That's not ${$('#dispName').text()} try again`)
   } 
   else {
-    alert(`Correct! That IS ${clickedPicName}'s pic!`);
-    //$(this).parent().addClass('greenPic')
+    //alert(`Correct! That IS ${clickedPicName}'s pic!`);
+    $(this).parent().addClass('greenPic')
+    setTimeout(function(){
+      $('div').removeClass('greenPic')
+    }, 2000);
     //add visual cue that they got it right with a delay
     promptPlayer();
   }//end if
 }//end clickOnPic 
 
 // function returnClass(){
-//   //$(this).parent().removeClass()
-//   $('.pic').parent().addClass('greenPic')
+//   $(this).parent().removeClass('greenPic')
+//   //$('.pic').parent().addClass('greenPic')
 // }
